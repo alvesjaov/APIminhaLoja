@@ -1,0 +1,65 @@
+# .NET Core / .NET 5+ / .NET 6+ build directories
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]Release/
+[Dd]ReleasePublic/
+[Aa]ssert/
+
+# User-specific files
+.vs/
+.vscode/
+.idea/
+
+# User-specific files for Rider
+.idea/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer directory
+Installers/
+
+# Windows Installer files
+Thumbs.db
+Desktop.ini
+
+# Windows Installer caches
+*.bak
+*.swp
+
+# JetBrains Rider and ReSharper folders
+.idea/
+
+# .NET Core / Visual Studio for Mac
+.vscode/
+
+# .NET Core / Visual Studio for Windows
+.vs/
+.vs2019/
+.vs2017/
+.vs2015/
+.vs2013/
+
+# NuGet directories
+.nuget/
+packages/
+
+# ASP.NET Core environment-specific settings
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Staging.json
+
+# Entity Framework Core migrations
+Migrations/
+
+# Mac files
+.DS_Store
+
+# Linux files
+*.swp
