@@ -20,19 +20,20 @@ A estrutura do projeto está organizada da seguinte forma:
 │   └── Produto.cs
 ├── /Data
 │   ├── ApplicationDbContext.cs
-│   └── Migrations/
+├── /Migrations
 ├── appsettings.json
 ├── Program.cs
 └── Startup.cs
 ```
 
+
 - **Controllers**: Contém os controladores que gerenciam as requisições HTTP.
 - **Models**: Contém as classes que representam as entidades do banco de dados.
-- **Data**: Contém a configuração do contexto do banco de dados e as migrações do Entity Framework.
+- **Data**: Contém a configuração do contexto do banco de dados.
+- **Migrations**: Contém as migrações do Entity Framework.
 - **appsettings.json**: Arquivo de configuração da aplicação.
 - **Program.cs**: Ponto de entrada da aplicação.
 - **Startup.cs**: Configuração dos serviços e do pipeline de requisições da aplicação.
-
 
 ## Configuração do Projeto
 
