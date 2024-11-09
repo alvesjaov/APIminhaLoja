@@ -55,9 +55,6 @@ appsettings.Development.json
 appsettings.Production.json
 appsettings.Staging.json
 
-# Entity Framework Core migrations
-Migrations/
-
 # Mac files
 .DS_Store
 
