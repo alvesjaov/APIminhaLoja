@@ -15,11 +15,10 @@ namespace minhaLoja.Models
         public string Status { get; set; } = string.Empty;
 
         [Required]
-        [JsonIgnore]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public Cliente Cliente { get; set; } = new Cliente();
 
         [Required]
-        [JsonIgnore]
         public ICollection<PedidoProduto> PedidoProdutos { get; set; } = new List<PedidoProduto>();
     }
 }
