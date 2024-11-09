@@ -1,12 +1,25 @@
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
+
 namespace minhaLoja.Models
 {
     public class Pedido
     {
+        [Key]
         public int IdPedido { get; set; }
-        public int ClienteId { get; set; }
-        public string? Status { get; set; }
 
-        public Cliente? Cliente { get; set; }
+        [Required]
+        public int ClienteId { get; set; }
+
+        [Required]
+        public string Status { get; set; } = string.Empty;
+
+        [Required]
+        [JsonIgnore]
+        public Cliente Cliente { get; set; } = new Cliente();
+
+        [Required]
+        [JsonIgnore]
         public ICollection<PedidoProduto> PedidoProdutos { get; set; } = new List<PedidoProduto>();
     }
 }

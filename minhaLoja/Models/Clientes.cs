@@ -1,13 +1,30 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace minhaLoja.Models
 {
     public class Cliente
     {
+        [Key]
         public int IdCliente { get; set; }
-        public string? NomeCliente { get; set; }
-        public string? EmailCliente { get; set; }
-        public string? NumeroCliente { get; set; }
-        public DateTime DataNascimento { get; set; }
 
-        public ICollection<Pedido> Pedidos { get; set; } = new List<Pedido>();
+        [Required]
+        [MaxLength(255)]
+        [Column(TypeName = "varchar(255)")]
+        public string? NomeCliente { get; set; }
+
+        [Required]
+        [MaxLength(255)]
+        [Column(TypeName = "varchar(255)")]
+        public string? EmailCliente { get; set; }
+
+        [Required]
+        [MaxLength(255)]
+        [Column(TypeName = "varchar(255)")]
+        public string? NumeroCliente { get; set; }
+
+        [Required]
+        public DateTime DataNascimento { get; set; }
     }
 }

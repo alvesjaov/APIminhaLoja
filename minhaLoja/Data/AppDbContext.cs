@@ -16,6 +16,13 @@ namespace minhaLoja.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<Cliente>(entity =>
+            {
+                entity.Property(e => e.NomeCliente).HasColumnType("varchar(255)");
+                entity.Property(e => e.EmailCliente).HasColumnType("varchar(255)");
+                entity.Property(e => e.NumeroCliente).HasColumnType("varchar(255)");
+            });
+
             // Configuração da chave composta para PedidoProduto
             modelBuilder.Entity<PedidoProduto>()
                 .HasKey(pp => new { pp.PedidoId, pp.ProdutoId });
