@@ -1,10 +1,10 @@
 using Microsoft.EntityFrameworkCore;
-using MinhaLojaAPI.Models;
+using minhaLoja.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configuração do DbContext com a string de conexão
-builder.Services.AddDbContext<LojaContext>(options =>
+// Adicionando o DbContext aos serviços
+builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Outros serviços necessários para a aplicação
