@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using minhaLoja.Data; 
+using minhaLoja.Data;
 using Microsoft.EntityFrameworkCore;
-using minhaLoja.Models; 
+using minhaLoja.Models;
 
 namespace minhaLoja.Controllers
 {
@@ -9,66 +9,68 @@ namespace minhaLoja.Controllers
     [ApiController]
     public class ClienteController : ControllerBase
     {
-   private readonly AppDbContext _context;
+        private readonly AppDbContext _context;
 
-    public ClienteController(AppDbContext context)
-    {
-        _context = context;
-    }
-
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Cliente>>> GetClientes()
-    {
-        return await _context.Clientes.ToListAsync();
-    }
-
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Cliente>> GetCliente(int id)
-    {
-        var cliente = await _context.Clientes.FindAsync(id);
-
-        if (cliente == null)
+        public ClienteController(AppDbContext context)
         {
-            return NotFound();
+            _context = context;
         }
 
-        return cliente;
-    }
-
-    [HttpPost]
-    public async Task<ActionResult<Cliente>> PostCliente(Cliente cliente)
-    {
-        _context.Clientes.Add(cliente);
-        await _context.SaveChangesAsync();
-
-        return CreatedAtAction(nameof(GetCliente), new { id = cliente.IdCliente }, cliente);
-    }
-
-    [HttpPut("{id}")]
-    public async Task<IActionResult> PutCliente(int id, Cliente cliente)
-    {
-        if (id != cliente.IdCliente)
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Cliente>>> GetClientes()
         {
-            return BadRequest();
+            return await _context.Clientes.ToListAsync();
         }
 
-        _context.Entry(cliente).State = EntityState.Modified;
-        await _context.SaveChangesAsync();
-
-        return NoContent();
-    }
-
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteCliente(int id)
-    {
-        var cliente = await _context.Clientes.FindAsync(id);
-        if (cliente == null)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Cliente>> GetCliente(int id)
         {
-            return NotFound();
+            var cliente = await _context.Clientes.FindAsync(id);
+
+            if (cliente == null)
+            {
+                return NotFound();
+            }
+
+            return cliente;
         }
 
-        _context.Clientes.Remove(cliente);
-        return NoContent();
+        [HttpPost]
+        public async Task<ActionResult<Cliente>> PostCliente(Cliente cliente)
+        {
+            _context.Clientes.Add(cliente);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetCliente), new { id = cliente.IdCliente }, cliente);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutCliente(int id, Cliente cliente)
+        {
+            if (id != cliente.IdCliente)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(cliente).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCliente(int id)
+        {
+            var cliente = await _context.Clientes.FindAsync(id);
+            if (cliente == null)
+            {
+                return NotFound();
+            }
+
+            _context.Clientes.Remove(cliente);
+            await _context.SaveChangesAsync(); // Adicione esta linha para salvar as alterações
+
+            return NoContent();
+        }
     }
-}
 }
