@@ -23,17 +23,5 @@ namespace minhaLoja.Models
         [Required]
         [JsonIgnore]
         public Produto? Produto { get; set; }
-
-        [Required]
-        [Column(TypeName = "varchar(255)")]
-        public string NomeCliente { get; set; }
-
-        [Required]
-        [Column(TypeName = "varchar(255)")]
-        public string EmailCliente { get; set; }
-
-        [Required]
-        [Column(TypeName = "varchar(255)")]
-        public string NumeroCliente { get; set; }
     }
 }

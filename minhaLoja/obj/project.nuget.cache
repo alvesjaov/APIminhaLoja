@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "M6r5lUjJbKw=",
+  "dgSpecHash": "k/368H3dCuQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\victo\\Desktop\\APIminhaLoja\\minhaloja\\minhaLoja.csproj",
+  "projectFilePath": "C:\\Users\\victo\\Desktop\\APIminhaLoja\\minhaLoja\\minhaLoja.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\victo\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\victo\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

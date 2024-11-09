@@ -36,8 +36,16 @@ namespace minhaLoja.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Cliente>> PostCliente(Cliente cliente)
+        public async Task<ActionResult<Cliente>> PostCliente(ClienteDTO clienteDTO)
         {
+            var cliente = new Cliente
+            {
+                NomeCliente = clienteDTO.NomeCliente,
+                EmailCliente = clienteDTO.EmailCliente,
+                NumeroCliente = clienteDTO.NumeroCliente,
+                DataNascimento = clienteDTO.DataNascimento
+            };
+
             _context.Clientes.Add(cliente);
             await _context.SaveChangesAsync();
 
@@ -68,9 +76,17 @@ namespace minhaLoja.Controllers
             }
 
             _context.Clientes.Remove(cliente);
-            await _context.SaveChangesAsync(); // Adicione esta linha para salvar as alterações
+            await _context.SaveChangesAsync();
 
             return NoContent();
         }
+    }
+
+    public class ClienteDTO
+    {
+        public string? NomeCliente { get; set; }
+        public string? EmailCliente { get; set; }
+        public string? NumeroCliente { get; set; }
+        public DateTime DataNascimento { get; set; }
     }
 }
