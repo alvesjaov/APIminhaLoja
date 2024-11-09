@@ -53,7 +53,6 @@ namespace minhaLoja.Controllers
             var pedido = new Pedido
             {
                 ClienteId = pedidoDto.ClienteId,
-                Cliente = cliente,
                 Status = pedidoDto.Status,
                 PedidoProdutos = pedidoDto.PedidoProdutos.Select(pp => new PedidoProduto
                 {
@@ -77,22 +76,14 @@ namespace minhaLoja.Controllers
             }
 
             var pedido = await _context.Pedidos.Include(p => p.PedidoProdutos)
-                                               .Include(p => p.Cliente)
                                                .FirstOrDefaultAsync(p => p.IdPedido == id);
             if (pedido == null)
             {
                 return NotFound();
             }
 
-            var cliente = await _context.Clientes.FindAsync(pedidoDto.ClienteId);
-            if (cliente == null)
-            {
-                return BadRequest("Cliente não encontrado.");
-            }
-
             pedido.Status = pedidoDto.Status;
             pedido.ClienteId = pedidoDto.ClienteId;
-            pedido.Cliente = cliente;
             pedido.PedidoProdutos = pedidoDto.PedidoProdutos.Select(pp => new PedidoProduto
             {
                 PedidoId = id,
@@ -127,7 +118,6 @@ namespace minhaLoja.Controllers
         public int IdPedido { get; set; }
         public int ClienteId { get; set; }
         public string Status { get; set; } = string.Empty;
-        public Cliente Cliente { get; set; } = new Cliente();
         public ICollection<PedidoProdutoDto> PedidoProdutos { get; set; } = new List<PedidoProdutoDto>();
     }
 

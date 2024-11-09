@@ -14,7 +14,6 @@ namespace minhaLoja.Models
         [Required]
         public string Status { get; set; } = string.Empty;
 
-        [Required]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public Cliente Cliente { get; set; } = new Cliente();
 
