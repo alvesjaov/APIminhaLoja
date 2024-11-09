@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\victo\\Desktop\\APIminhaLoja\\minhaLoja\\minhaLoja.csproj": {}
+    "C:\\Users\\victo\\Desktop\\APIminhaLoja\\minhaloja\\minhaLoja.csproj": {}
   },
   "projects": {
-    "C:\\Users\\victo\\Desktop\\APIminhaLoja\\minhaLoja\\minhaLoja.csproj": {
+    "C:\\Users\\victo\\Desktop\\APIminhaLoja\\minhaloja\\minhaLoja.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\victo\\Desktop\\APIminhaLoja\\minhaLoja\\minhaLoja.csproj",
+        "projectUniqueName": "C:\\Users\\victo\\Desktop\\APIminhaLoja\\minhaloja\\minhaLoja.csproj",
         "projectName": "minhaLoja",
-        "projectPath": "C:\\Users\\victo\\Desktop\\APIminhaLoja\\minhaLoja\\minhaLoja.csproj",
+        "projectPath": "C:\\Users\\victo\\Desktop\\APIminhaLoja\\minhaloja\\minhaLoja.csproj",
         "packagesPath": "C:\\Users\\victo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\victo\\Desktop\\APIminhaLoja\\minhaLoja\\obj\\",
+        "outputPath": "C:\\Users\\victo\\Desktop\\APIminhaLoja\\minhaloja\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\victo\\AppData\\Roaming\\NuGet\\NuGet.Config",
